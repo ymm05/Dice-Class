@@ -2,29 +2,32 @@
 /**
  * Write a description of class RenameThisClass here.
  *
- * @author (your name)
+ * @Yasin McCaskill
  * @version (a version number or a date)
  */
-public class DieN
+public class Dice
+
 {
-    private int value;
-    private int sides;
-    public DieN(int sides) {
-        this.sides = sides;
-        this.roll();
+    Die6 die1;
+    Die6 die2;
+
+    public Dice() {
+        die1 = new Die6();
+        die2 = new Die6();
     }
 
     public int getValue() {
-        return value;
+        return die1.getValue() + die2.getValue();
     }
 
     public void roll() {
-        this.value = (int)(Math.random() * this.sides) + 1;
+        die1.roll();
+        die2.roll();
     }
 
     public int rollAndGetValue() {
         this.roll();
         return getValue();
     }
-
+    
 }
